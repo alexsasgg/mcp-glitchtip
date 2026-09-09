@@ -1,5 +1,5 @@
 {
-  "name": "mcp-glitchtip",
+  "name": "@alexsasgg/mcp-glitchtip",
   "version": "0.1.3",
   "description": "An MCP server for GlitchTip error monitoring",
   "type": "module",
