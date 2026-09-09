@@ -84,20 +84,35 @@ export interface GlitchTipConfig {
 export class GlitchTipConnectionError extends Error {
   constructor(message: string) {
     super(message);
-    this.name = 'GlitchTipConnectionError';
+    this.name = "GlitchTipConnectionError";
   }
 }
 
 export class GlitchTipApiError extends Error {
-  constructor(message: string, public statusCode?: number) {
+  constructor(
+    message: string,
+    public statusCode?: number,
+  ) {
     super(message);
-    this.name = 'GlitchTipApiError';
+    this.name = "GlitchTipApiError";
   }
 }
 
 export class GlitchTipValidationError extends Error {
   constructor(message: string) {
     super(message);
-    this.name = 'GlitchTipValidationError';
+    this.name = "GlitchTipValidationError";
   }
+}
+
+export interface GlitchTipPaginatedResponse<T> {
+  data: T[];
+  nextCursor: string | null;
+  previousCursor: string | null;
+}
+
+export interface GlitchTipIssuesParams {
+  status?: "unresolved" | "resolved" | "all";
+  cursor?: string;
+  perPage?: number;
 }
